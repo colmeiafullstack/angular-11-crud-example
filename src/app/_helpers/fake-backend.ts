@@ -13,7 +13,7 @@ let users: any[] = usersJSON ? JSON.parse(usersJSON) : [{
     title: 'Mr',
     firstName: 'Joe',
     lastName: 'Bloggs',
-    email: 'joe@bloggs.com',
+    // email: 'joe@bloggs.com',
     role: Role.User,
     password: 'joe123'
 }];
@@ -40,7 +40,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 default:
                     // pass through any requests not handled above
                     return next.handle(request);
-            }    
+            }
         }
 
         // route functions
@@ -57,9 +57,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         function createUser() {
             const user = body;
 
-            if (users.find(x => x.email === user.email)) {
-                return error(`User with the email ${user.email} already exists`);
-            }
+            // if (users.find(x => x.email === user.email)) {
+            //     return error(`User with the email ${user.email} already exists`);
+            // }
 
             // assign user id and a few other properties then save
             user.id = newUserId();
@@ -74,9 +74,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             let params = body;
             let user = users.find(x => x.id === idFromUrl());
 
-            if (params.email !== user.email && users.find(x => x.email === params.email)) {
-                return error(`User with the email ${params.email} already exists`);
-            }
+            // if (params.email !== user.email && users.find(x => x.email === params.email)) {
+            //     return error(`User with the email ${params.email} already exists`);
+            // }
 
             // only update password if entered
             if (!params.password) {

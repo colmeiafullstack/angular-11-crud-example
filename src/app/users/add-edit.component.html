@@ -13,13 +13,27 @@
                 <div *ngIf="f.title.errors.required">Pera ai, você precisa colocar a Operação!</div>
             </div>
         </div>
+
         <div class="form-group col-5">
+          <label>Linha</label>
+          <select formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+              <option value=""></option>
+              <option value="Linha 01 - CCR Bahia">Linha 01 - CCR Bahia</option>
+              <option value="Linha 02 - CCR Bahia">Linha 02 - CCR Bahia</option>
+              <option value="Linha 08 - Diamante">Linha 08-Diamante - CPTM São Paulo</option>
+              <option value="Linha 09 - Esmeralda">Linha 09-Esmeralda - CPTM São Paulo</option>
+          </select>
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="f.firstName.errors.required">Pera ai, você precisa colocar o Numero da Linha!</div>
+          </div>
+      </div>
+        <!-- <div class="form-group col-5">
             <label>Linha</label>
             <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
             <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                 <div *ngIf="f.firstName.errors.required">Pera ai, você precisa colocar a Linha!</div>
             </div>
-        </div>
+        </div> -->
         <div class="form-group col-5">
             <label>Numero da Composição</label>
             <input type="number" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
