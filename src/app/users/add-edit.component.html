@@ -22,7 +22,7 @@
         </div>
         <div class="form-group col-5">
             <label>Numero da Composição</label>
-            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+            <input type="number" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                 <div *ngIf="f.lastName.errors.required">Tchu tchuuuu... qual o numero desse trem?</div>
             </div>
@@ -30,14 +30,73 @@
     </div>
     <div class="form-row">
         <div class="form-group col-7">
-            <label>Email do Administrador</label>
-            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
-            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-                <div *ngIf="f.email.errors.required">Você esqueceu o e-mail do manda chuva!</div>
-                <div *ngIf="f.email.errors.email">humm... isso não parece um endereço de e-mail!</div>
+            <label>ALICIA Alfa ID</label>
+            <input type="number" formControlName="alicia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.alicia.errors }" />
+            <div *ngIf="submitted && f.alicia.errors" class="invalid-feedback">
+                <div *ngIf="f.alicia.errors.required">Qual ID Alicia da minha amiga?</div>
+                <div *ngIf="f.alicia.errors.alicia">humm... isso não parece um numero de Alicia!</div>
             </div>
         </div>
-        <div class="form-group col">
+        <div class="form-group col-1">
+          <label>CAM-A</label>
+          <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
+          <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
+              <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
+              <div *ngIf="f.cam.errors.cam">humm... isso não parece um numero de camera!</div>
+          </div>
+      </div>
+      <div class="form-group col-1">
+        <label>CAM-B</label>
+        <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
+          <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
+              <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
+              <div *ngIf="f.cam.errors.cam">humm... isso não parece um numero de camera!</div>
+        </div>
+    </div>
+    <div class="form-group col-1">
+      <label>CAM-C</label>
+      <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
+          <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
+              <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
+              <div *ngIf="f.cam.errors.cam">humm... isso não parece um numero de camera!</div>
+      </div>
+  </div>
+
+  <div class="form-group col-7">
+    <label>ALICIA Bravo ID</label>
+    <input type="number" formControlName="alicia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.alicia.errors }" />
+            <div *ngIf="submitted && f.alicia.errors" class="invalid-feedback">
+                <div *ngIf="f.alicia.errors.required">Qual ID Alicia da minha amiga?</div>
+                <div *ngIf="f.alicia.errors.alicia">humm... isso não parece um numero de Alicia!</div>
+    </div>
+</div>
+<div class="form-group col-1">
+  <label>CAM-D</label>
+  <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
+          <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
+              <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
+              <div *ngIf="f.cam.errors.cam">humm... isso não parece um numero de camera!</div>
+  </div>
+</div>
+<div class="form-group col-1">
+<label>CAM-E</label>
+<input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
+          <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
+              <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
+              <div *ngIf="f.cam.errors.cam">humm... isso não parece um numero de camera!</div>
+</div>
+</div>
+<div class="form-group col-1">
+<label>CAM-F</label>
+<input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
+          <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
+              <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
+              <div *ngIf="f.cam.errors.cam">humm... isso não parece um numero de camera!</div>
+</div>
+</div>
+
+
+        <!-- <div class="form-group col-5">
             <label>Tipo de Leitura</label>
             <select formControlName="role" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.role.errors }">
                 <option value=""></option>
@@ -47,7 +106,7 @@
             <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
                 <div *ngIf="f.role.errors.required">Preciso saber o que vou fazer!</div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div *ngIf="!isAddMode">
         <h3 class="pt-3">Mudar Senha</h3>
@@ -66,7 +125,7 @@
             <label>Confirmar Senha</label>
             <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
             <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-                <div *ngIf="f.confirmPassword.errors.required">Confirme a senha porfavor!</div>
+                <div *ngIf="f.confirmPassword.errors.required">Confirme a senha por favor!</div>
                 <div *ngIf="f.confirmPassword.errors.mustMatch">Hum...as senhas não estão iguais!</div>
             </div>
         </div>

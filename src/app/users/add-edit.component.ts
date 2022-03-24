@@ -25,7 +25,7 @@ export class AddEditComponent implements OnInit {
     ngOnInit() {
         this.id = this.route.snapshot.params['id'];
         this.isAddMode = !this.id;
-        
+
         // password not required in edit mode
         const passwordValidators = [Validators.minLength(6)];
         if (this.isAddMode) {
@@ -37,8 +37,9 @@ export class AddEditComponent implements OnInit {
             title: ['', Validators.required],
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
-            email: ['', [Validators.required, Validators.email]],
-            role: ['', Validators.required],
+            alicia: ['', Validators.required],
+            // email: ['', [Validators.required, Validators.email]],
+            cam: ['', Validators.required],
             password: ['', [Validators.minLength(6), this.isAddMode ? Validators.required : Validators.nullValidator]],
             confirmPassword: ['', this.isAddMode ? Validators.required : Validators.nullValidator]
         }, formOptions);
@@ -76,7 +77,7 @@ export class AddEditComponent implements OnInit {
         this.userService.create(this.form.value)
             .pipe(first())
             .subscribe(() => {
-                this.alertService.success('User added', { keepAfterRouteChange: true });
+                this.alertService.success('ALICIA Adicionada', { keepAfterRouteChange: true });
                 this.router.navigate(['../'], { relativeTo: this.route });
             })
             .add(() => this.loading = false);
@@ -86,7 +87,7 @@ export class AddEditComponent implements OnInit {
         this.userService.update(this.id, this.form.value)
             .pipe(first())
             .subscribe(() => {
-                this.alertService.success('User updated', { keepAfterRouteChange: true });
+                this.alertService.success('ALICIA Atualizada', { keepAfterRouteChange: true });
                 this.router.navigate(['../../'], { relativeTo: this.route });
             })
             .add(() => this.loading = false);
