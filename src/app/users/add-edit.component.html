@@ -2,26 +2,26 @@
 <h1 *ngIf="!isAddMode">Editar Alicias</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-row">
-        <div class="form-group col">
-            <label>Operação</label>
+        <div class="form-group col-3">
+            <label>Unidade</label>
             <select formControlName="title" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
                 <option value=""></option>
-                <option value="CCR Bahia">CCR Bahia</option>
-                <option value="CPTM São Paulo">CCR São Paulo</option>
+                <option value="CCR Bahia">ViaMobilidade Linha 08 e 09</option>
+                <!-- <option value="CPTM São Paulo">ViaMobilidade Linha 09</option> -->
             </select>
             <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
                 <div *ngIf="f.title.errors.required">Pera ai, você precisa colocar a Operação!</div>
             </div>
         </div>
 
-        <div class="form-group col-5">
+        <div class="form-group col-3">
           <label>Linha</label>
           <select formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
               <option value=""></option>
-              <option value="Linha 01 - CCR Bahia">Linha 01 - CCR Bahia</option>
-              <option value="Linha 02 - CCR Bahia">Linha 02 - CCR Bahia</option>
-              <option value="Linha 08 - Diamante">Linha 08-Diamante - CPTM São Paulo</option>
-              <option value="Linha 09 - Esmeralda">Linha 09-Esmeralda - CPTM São Paulo</option>
+              <!-- <option value="Linha 01 - CCR Bahia">Linha 01 - CCR Bahia</option>
+              <option value="Linha 02 - CCR Bahia">Linha 02 - CCR Bahia</option> -->
+              <option value="Linha 08 - Diamante">Linha 08 - Diamante</option>
+              <option value="Linha 09 - Esmeralda">Linha 09 - Esmeralda</option>
           </select>
           <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
               <div *ngIf="f.firstName.errors.required">Pera ai, você precisa colocar o Numero da Linha!</div>
@@ -35,7 +35,7 @@
             </div>
         </div> -->
         <div class="form-group col-5">
-            <label>Numero da Composição</label>
+            <label>Numero do Trem</label>
             <input type="number" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
             <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                 <div *ngIf="f.lastName.errors.required">Tchu tchuuuu... qual o numero desse trem?</div>
@@ -44,7 +44,7 @@
     </div>
     <div class="form-row">
         <div class="form-group col-7">
-            <label>ALICIA Alfa ID</label>
+            <label>ALICIA ID</label>
             <input type="number" formControlName="alicia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.alicia.errors }" />
             <div *ngIf="submitted && f.alicia.errors" class="invalid-feedback">
                 <div *ngIf="f.alicia.errors.required">Qual ID Alicia da minha amiga?</div>
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="form-group col-1">
-          <label>CAM-A</label>
+          <label>MC1</label>
           <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
           <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
               <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
@@ -60,7 +60,7 @@
           </div>
       </div>
       <div class="form-group col-1">
-        <label>CAM-B</label>
+        <label>MC2</label>
         <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
           <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
               <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
@@ -68,7 +68,7 @@
         </div>
     </div>
     <div class="form-group col-1">
-      <label>CAM-C</label>
+      <label>MC3</label>
       <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
           <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
               <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
@@ -77,7 +77,7 @@
   </div>
 
   <div class="form-group col-7">
-    <label>ALICIA Bravo ID</label>
+    <label>ALICIA ID</label>
     <input type="number" formControlName="alicia" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.alicia.errors }" />
             <div *ngIf="submitted && f.alicia.errors" class="invalid-feedback">
                 <div *ngIf="f.alicia.errors.required">Qual ID Alicia da minha amiga?</div>
@@ -85,7 +85,7 @@
     </div>
 </div>
 <div class="form-group col-1">
-  <label>CAM-D</label>
+  <label>MC4</label>
   <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
           <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
               <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
@@ -93,7 +93,7 @@
   </div>
 </div>
 <div class="form-group col-1">
-<label>CAM-E</label>
+<label>MC5</label>
 <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
           <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
               <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
@@ -101,7 +101,7 @@
 </div>
 </div>
 <div class="form-group col-1">
-<label>CAM-F</label>
+<label>MC6</label>
 <input type="number" formControlName="cam" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.cam.errors }" />
           <div *ngIf="submitted && f.cam.errors" class="invalid-feedback">
               <div *ngIf="f.cam.errors.required">Qual o numero de série do meu olho?</div>
@@ -147,7 +147,7 @@
     <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            Save
+            Salvar
         </button>
         <a routerLink="/users" class="btn btn-link">Cancelar</a>
     </div>
